@@ -1,0 +1,30 @@
+sudo apt install software-properties-common -y
+sudo apt install ansible -y
+
+
+mkdir kubernetes
+
+cd kubernetes
+
+$ ansible -i hosts all -m ping
+master | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+worker2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+worker1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+
+ansible-playbook -i hosts users.yml
+
+ansible-playbook -i hosts install-k8s.yml
+
+ansible-playbook -i hosts master.yml
+
+ansible-playbook -i hosts join-workers.yml
