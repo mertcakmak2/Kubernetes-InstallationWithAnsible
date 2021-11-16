@@ -1,7 +1,3 @@
-sudo apt install software-properties-common -y
-sudo apt install ansible -y
-
-
 mkdir kubernetes
 
 cd kubernetes
