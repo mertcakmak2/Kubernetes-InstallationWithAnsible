@@ -31,6 +31,8 @@ worker ubuntu server ip=> 164.92.246.143
 
 `ansible-playbook -i hosts join-workers.yml`
 
+![image](https://user-images.githubusercontent.com/21373505/142379101-d341b8b8-a125-46da-a059-c4c8c15ed9c1.png)
+
 # Olası hatalar
 
 `kubectl get nodes` sonrası
