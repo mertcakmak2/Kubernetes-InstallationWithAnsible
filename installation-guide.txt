@@ -1,5 +1,13 @@
-mkdir kubernetes
+sudo apt update
+sudo apt install software-properties-common -y
+sudo apt install ansible -y
 
+ssh-keygen -t rsa
+
+ssh-copy-id root@worker_ip  
+ssh-copy-id root@master_ip
+
+mkdir kubernetes
 cd kubernetes
 
 $ ansible -i hosts all -m ping
@@ -7,15 +15,10 @@ master | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-worker2 | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
-}
 worker1 | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-
 
 ansible-playbook -i hosts users.yml
 
