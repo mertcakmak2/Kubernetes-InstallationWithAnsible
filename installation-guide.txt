@@ -4,8 +4,8 @@ sudo apt install ansible -y
 
 ssh-keygen -t rsa
 
-ssh-copy-id root@worker_ip  
-ssh-copy-id root@master_ip
+ssh-copy-id root@164.92.244.231  
+ssh-copy-id root@164.92.246.143
 
 mkdir kubernetes
 cd kubernetes
