@@ -15,7 +15,7 @@ worker ubuntu server ip=> 164.92.246.143
 
 # SSH Keygen oluşturma ve oluşan keygeni Master, Worker Makinelerine kopyalama
 
-`ssh-keygen -t rsa`
+`ssh-keygen -q -f ~/.ssh/id_rsa -N ""`
 
 `ssh-copy-id root@164.92.246.143`  Worker sunucusuna kopyalama işlemi
 
