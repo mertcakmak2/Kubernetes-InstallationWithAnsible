@@ -35,7 +35,9 @@ worker ubuntu server ip=> 164.92.246.143
 
 # Olası hatalar
 
-`kubectl get nodes` sonrası
+1) Calico için kubeadm, kubectl ve kubelet versiyonu 1.21 yada üstü olmalı (install-k8s.yml install kubernetes adımı)
+
+2) `kubectl get nodes` sonrası
 "The connection to the server localhost:8080 was refused - 
 did you specify the right host or port?" 
 
@@ -50,3 +52,15 @@ chown $(id -u):$(id -g) $HOME/admin.conf
 export KUBECONFIG=$HOME/admin.conf
 
 echo 'export KUBECONFIG=$HOME/admin.conf' >> $HOME/.bashrc
+
+
+## Başka bir alternatif çözüm
+
+https://discuss.kubernetes.io/t/the-connection-to-the-server-localhost-8080-was-refused-did-you-specify-the-right-host-or-port/1464/2
+
+mkdir -p $HOME/.kube
+
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
